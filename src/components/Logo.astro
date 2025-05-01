@@ -1,0 +1,18 @@
+---
+import qqLogo from '../images/qq-logo.png';
+import {Image} from 'astro:assets';
+
+const {class: className, ...rest} = Astro.props;
+---
+
+<Image
+  src={qqLogo}
+  alt="Quantum Queries Logo"
+  class:list={['logo', className]}
+  {...rest}
+/>
+<style>
+  .logo {
+    width: auto;
+  }
+</style>

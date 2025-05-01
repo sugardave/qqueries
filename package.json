@@ -1,0 +1,23 @@
+{
+  "name": "qqueries.com",
+  "version": "0.0.1",
+  "description": "Website for Quantum Queries",
+  "author": {
+    "name": "Dave Freeman",
+    "email": "sugardave@gmail.com"
+  },
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.6.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
