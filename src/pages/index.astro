@@ -1,43 +1,11 @@
 ---
-import Logo from '../components/Logo.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import '../styles/global.css';
+
+const pageTitle = 'Quantum Queries';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Quantum Queries</title>
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <Logo />
-    </main>
-    <footer></footer>
-    <style>
-      html,
-      body {
-        font-family: Poppins, serif !important;
-        scroll-behavior: smooth;
-      }
-      body {
-        -webkit-font-smoothing: antialiased;
-        background-color: rgb(95, 88, 88);
-      }
-      header {
-        margin-bottom: 2em;
-      }
-      main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      footer {
-        margin-top: 2em;
-      }
-    </style>
-  </body>
-</html>
+<BaseLayout class="layout__home-page" pageTitle={pageTitle}>
+  <main class="home-page__main"></main>
+</BaseLayout>
