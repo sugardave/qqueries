@@ -1,0 +1,36 @@
+.wallet-connector__button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0.5rem;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  margin: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+.wallet-connector__button:hover {
+  background-color: #f0f0f0;
+}
+.wallet-connector__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #cd71da;
+}
+.wallet-connector__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.wallet-connector__image {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.wallet-connector__text {
+  font-size: 1rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}

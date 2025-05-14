@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AutoLottoDemo from '../../components/AutoLotto/AutoLottoDemo.astro';
+
+import '../../styles/global.css';
+---
+
+<BaseLayout
+  class="layout__poc-page"
+  pageTitle="Quantum Queries - AutoLotto (PoC)"
+  ><p>
+    AutoLotto is a proof of concept (PoC) for a lottery system that uses the
+    QQueries QRNG service (QRNG) to select winners. The goal of this PoC is to
+    demonstrate the feasibility and effectiveness of using QRNG in a lottery
+    system.
+  </p>
+  <p>
+    The PoC consists of a smart contract that implements the lottery logic and
+    uses QRNG to select winners. The smart contract is deployed on the <a
+      href="https://opengpu.network/">OpenGPU network</a
+    >, an EVM-compatible layer 1 blockchain designed to be a low-cost,
+    high-performance platform for decentralized applications with a focus on AI
+    and other GPU intensive workloads.
+  </p>
+  <AutoLottoDemo />
+</BaseLayout>
