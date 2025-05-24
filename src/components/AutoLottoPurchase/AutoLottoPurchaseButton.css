@@ -27,13 +27,9 @@
 .purchase-button__button {
   width: 100%;
   max-width: 200px;
-  padding: 10px;
   font-size: 16px;
   background-color: #4caf50;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 /* Media queries for responsiveness */

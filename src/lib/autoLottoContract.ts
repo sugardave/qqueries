@@ -1,5 +1,7 @@
+const {PUBLIC_AUTOLOTTO_CONTRACT_ADDRESS: address} = import.meta.env;
+
 const autoLottoContract = {
-  address: '0x1C33444682e398d9D0D3D1A09BAD5Ef3CbcA8a86',
+  address,
   abi: [
     {
       inputs: [
@@ -89,15 +91,46 @@ const autoLottoContract = {
     },
     {
       anonymous: false,
+      inputs: [],
+      name: 'LotteryCanceled',
+      type: 'event'
+    },
+    {
+      anonymous: false,
       inputs: [
         {
           indexed: true,
           internalType: 'address',
           name: 'winner',
           type: 'address'
+        },
+        {
+          indexed: true,
+          internalType: 'uint256',
+          name: 'amount',
+          type: 'uint256'
         }
       ],
       name: 'LotteryCompleted',
+      type: 'event'
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: 'address',
+          name: 'participant',
+          type: 'address'
+        },
+        {
+          indexed: true,
+          internalType: 'uint256',
+          name: 'amount',
+          type: 'uint256'
+        }
+      ],
+      name: 'LotteryRefunded',
       type: 'event'
     },
     {
@@ -210,12 +243,39 @@ const autoLottoContract = {
     },
     {
       inputs: [],
+      name: 'cancelLottery',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'closeLottery',
+      outputs: [],
+      stateMutability: 'nonpayable',
+      type: 'function'
+    },
+    {
+      inputs: [],
       name: 'endTime',
       outputs: [
         {
           internalType: 'uint256',
           name: '',
           type: 'uint256'
+        }
+      ],
+      stateMutability: 'view',
+      type: 'function'
+    },
+    {
+      inputs: [],
+      name: 'getLotteryState',
+      outputs: [
+        {
+          internalType: 'enum AutoLottoV1.LotteryState',
+          name: '',
+          type: 'uint8'
         }
       ],
       stateMutability: 'view',

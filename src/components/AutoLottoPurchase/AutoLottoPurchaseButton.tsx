@@ -1,4 +1,5 @@
-import type {FC, ChangeEvent, MouseEvent} from 'react';
+import type {ChangeEvent, MouseEvent} from 'react';
+import {AutoLottoButton} from '../AutoLottoButton/AutoLottoButton';
 
 import './AutoLottoPurchaseButton.css';
 
@@ -9,12 +10,12 @@ interface AutoLottoPurchaseButtonProps {
   onClick: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AutoLottoPurchaseButton: FC<AutoLottoPurchaseButtonProps> = ({
+const AutoLottoPurchaseButton = ({
   onChange,
   onClick,
   maximumTickets,
   value
-}) => {
+}: AutoLottoPurchaseButtonProps) => {
   return (
     <section className="purchase-button">
       <input
@@ -27,9 +28,11 @@ const AutoLottoPurchaseButton: FC<AutoLottoPurchaseButtonProps> = ({
         value={value}
         onChange={onChange}
       />
-      <button className="purchase-button__button" onClick={onClick}>
-        <span className="purchase-button__label">Purchase Ticket(s)</span>
-      </button>
+      <AutoLottoButton
+        className="purchase-button__button"
+        onClick={onClick}
+        label="Purchase Ticket(s)"
+      />
     </section>
   );
 };

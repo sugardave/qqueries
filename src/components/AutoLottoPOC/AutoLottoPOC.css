@@ -1,0 +1,6 @@
+.auto-lotto-poc {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 0.75fr 0.5fr;
+  justify-items: center;
+}

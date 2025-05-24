@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import AutoLottoDemo from '../../components/AutoLotto/AutoLottoDemo.astro';
+import {AutoLottoPOC} from '../../components/AutoLottoPOC/AutoLottoPOC';
 
 import '../../styles/global.css';
 ---
@@ -22,5 +22,5 @@ import '../../styles/global.css';
     high-performance platform for decentralized applications with a focus on AI
     and other GPU intensive workloads.
   </p>
-  <AutoLottoDemo />
+  <AutoLottoPOC client:only="react" />
 </BaseLayout>

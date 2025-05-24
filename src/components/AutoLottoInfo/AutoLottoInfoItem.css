@@ -1,0 +1,21 @@
+.auto-lotto-info-item {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+}
+
+.auto-lotto-info-item__label {
+  align-self: end;
+  justify-self: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: fit-content;
+  color: #333;
+}
+
+.auto-lotto-info-item__value {
+  align-self: start;
+  justify-self: center;
+  font-size: 1.25rem;
+  color: #555;
+}
