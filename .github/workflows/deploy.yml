@@ -23,7 +23,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         env:
-          PUBLIC_AUTOLOTTO_CONTRACT_ADDRESS: 0x78691A4C7047d7d0bB90fF801875345f4bD6740d
+          PUBLIC_AUTOLOTTO_CONTRACT_ADDRESS: '0x78691A4C7047d7d0bB90fF801875345f4bD6740d'
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
