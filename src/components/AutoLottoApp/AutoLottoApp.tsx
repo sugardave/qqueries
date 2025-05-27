@@ -1,11 +1,11 @@
 import {useEffect, useState, type FC} from 'react';
+import type {Config as WagmiConfig} from 'wagmi';
 import {useConfig, useWatchContractEvent} from 'wagmi';
 import {readContracts} from 'wagmi/actions';
-import {type Config as WagmiConfig} from 'wagmi';
 import {formatEther} from 'viem';
 import {AutoLottoPurchase} from '../AutoLottoPurchase/AutoLottoPurchase';
 import {AutoLottoInfo, AutoLottoInfoItem} from '../AutoLottoInfo';
-import {autoLottoContract} from '../../lib';
+import {autoLottoContract, formatWalletAddress} from '../../lib';
 
 import './AutoLottoApp.css';
 
@@ -24,7 +24,8 @@ const contractsAndMethods = [
   {...autoLottoContract, functionName: 'ticketPrice'},
   {...autoLottoContract, functionName: 'endTime'},
   {...autoLottoContract, functionName: 'getLotteryState'},
-  {...autoLottoContract, functionName: 'getLotteryValue'}
+  {...autoLottoContract, functionName: 'getLotteryValue'},
+  {...autoLottoContract, functionName: 'winner'}
 ] as const;
 
 const AutoLottoApp: FC = () => {
@@ -47,7 +48,8 @@ const AutoLottoApp: FC = () => {
       {result: price},
       {result: endTime},
       {result: state},
-      {result: lotteryValue}
+      {result: lotteryValue},
+      {result: winner}
     ] = await readContracts(config, {contracts: contractsAndMethods});
 
     setAvailableTickets(remainingTickets?.toString() || '0');
@@ -55,6 +57,7 @@ const AutoLottoApp: FC = () => {
     setTicketPrice(formatEther(price ?? 0n));
     setPrizeTotal(formatEther(lotteryValue ?? 0n));
     setLotteryState(state as LotteryState);
+    setWinner(winner ? winner.toString() : '');
 
     const endsAt = new Date(Number(endTime) * 1000);
     const dateOptions = {
@@ -90,10 +93,8 @@ const AutoLottoApp: FC = () => {
   useWatchContractEvent({
     ...autoLottoContract,
     eventName: 'LotteryCompleted',
-    onLogs(logs) {
+    onLogs() {
       // update info when the lottery is completed
-      const {winner} = logs[0]!.args;
-      setWinner(String(winner));
       getAutoLottoInfo();
     }
   });
@@ -137,7 +138,7 @@ const AutoLottoApp: FC = () => {
         />
       ) : null}
       {lotteryState === LotteryState.COMPLETED ? (
-        <AutoLottoInfoItem label="Winner" value={winner} />
+        <AutoLottoInfoItem label="Winner" value={formatWalletAddress(winner)} />
       ) : null}
     </section>
   );
