@@ -1,0 +1,21 @@
+---
+import qrngImage from '../images/qrng-coin.png';
+import {Image} from 'astro:assets';
+
+const {class: className, ...rest} = Astro.props;
+---
+
+<Image
+  src={qrngImage}
+  alt="QRNG Coin image"
+  class:list={['coin', className]}
+  {...rest}
+/>
+<style>
+  .coin {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    width: auto;
+  }
+</style>

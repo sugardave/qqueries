@@ -1,0 +1,13 @@
+---
+import clsx from 'clsx/lite';
+
+const {class: className, href} = Astro.props;
+const classes = clsx(
+  'text-lilac-400 visited:text-lilac-400 decoration-lilac-300 underline decoration-dotted',
+  className
+);
+---
+
+<a class={classes} href={href}>
+  <slot />
+</a>

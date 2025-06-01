@@ -1,11 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-import '../styles/global.css';
-
-const pageTitle = 'Quantum Queries';
+import RootLayout from '../layouts/RootLayout.astro';
+import {WarpBackground} from '../components/WarpBackground/WarpBackground';
 ---
 
-<BaseLayout class="layout__home-page" pageTitle={pageTitle}>
-  <main class="home-page__main"></main>
-</BaseLayout>
+<RootLayout>
+  <main
+    class="flex justify-center items-center bg-[url('/images/qq-logo.png')] bg-center bg-no-repeat bg-contain h-screen"
+  >
+    <div
+      class="group relative w-full min-h-dvh flex items-center justify-center"
+    >
+      <div class="absolute w-full h-dvh -z-10">
+        <WarpBackground
+          color1="#09090b"
+          color2="#3f262b"
+          color3="#81468a"
+          rotation={0.1}
+          speed={0.6}
+          swirl={0.5}
+          swirlIterations={10}
+          shapeScale={0.3}
+          client:load
+        />
+      </div>
+    </div>
+  </main>
+</RootLayout>

@@ -1,8 +1,15 @@
 ---
+import clsx from 'clsx/lite';
 import {Image} from 'astro:assets';
+
+type Props = {
+  linkStyle?: string;
+};
+
+const {linkStyle: className} = Astro.props;
 ---
 
-<a href="/">
+<a class={clsx(className)} href="/">
   <Image
     src="/images/qq-logo-no-text.png"
     alt="Quantum Queries logo"

@@ -1,101 +1,20 @@
-html {
-  background-color: rgb(95, 88, 88);
-  font-family: Poppins, serif !important;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme inline {
+  --font-serif: var(--font-poppins);
+
+  --color-lilac-50: #fcf6fd;
+  --color-lilac-100: #f9ecfb;
+  --color-lilac-200: #f2d8f6;
+  --color-lilac-300: #eabbee;
+  --color-lilac-400: #dd90e2;
+  --color-lilac-500: #cb64d1;
+  --color-lilac-600: #b045b4;
+  --color-lilac-700: #933695;
+  --color-lilac-800: #792e7a;
+  --color-lilac-900: #652a64;
+  --color-lilac-950: #411141;
 }
 
-a:link,
-a:visited {
-  color: rgb(193, 155, 236);
-  text-decoration: underline dotted rgb(234, 187, 238);
-}
-
-.home-page__main {
-  background-image: url('/images/qq-logo.png');
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.layout__about-page,
-.layout__poc-page {
-  color: rgb(234, 187, 238);
-  font-size: 1.5rem;
-}
-
-.home-page__main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-/* nav styles */
-
-.handle {
-  padding-right: 20px;
-  cursor: pointer;
-}
-
-.handle__line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: rgb(239, 169, 241);
-}
-
-.nav-links {
-  display: none;
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: rgb(239, 169, 241);
-  margin: 0;
-}
-
-.nav-links a {
-  color: rgb(239, 169, 241);
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-  background-color: rgb(239, 169, 241);
-  color: rgb(170, 82, 252);
-}
-
-.expanded {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links > *:not(:first-child) {
-    margin-left: auto; /* Push all elements except the first one to the right */
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-
-  .handle {
-    display: none;
-  }
-}
+@custom-variant hocus (&:hover, &:focus);

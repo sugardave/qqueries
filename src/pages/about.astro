@@ -1,33 +1,37 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import RootLayout from '../layouts/RootLayout.astro';
+import StyledLink from '../components/StyledLink.astro';
 
 import '../styles/global.css';
 ---
 
-<BaseLayout class="layout__about-page" pageTitle="About Quantum Queries"
-  ><p>
-    Quantum Queries (QQueries) provides non-deterministic information derived
-    using quantum mechanics to deterministic systems such as blockchain smart
-    contracts and decentralized applications (dApps). The goal of QQueries is to
-    provide a reliable source of non-deterministic information that can be used
-    to enhance the functionality and security of smart contracts and dApps.
-  </p>
-  <p>
-    QRNG will be the flagship product of Quantum Queries. It is a service that
-    provides random numbers generated from quantum phenomena. The service is
-    designed to be used by developers of smart contracts and other decentralized
-    applications (dApps) that require true randomness.
-  </p>
-  <p>
-    QRNG will be available on the <a href="https://opengpu.network/"
-      >OpenGPU network</a
-    >, an EVM-compatible layer 1 blockchain designed to be a low-cost,
-    high-performance platform for decentralized applications with a focus on AI
-    and other GPU intensive workloads.
-  </p>
-  <p>
-    QRNG token presale will be held on <a href="https://opensale.finance/"
-      >OpenSale</a
-    >. More details coming soon!
-  </p>
-</BaseLayout>
+<RootLayout title="About Quantum Queries">
+  <main class="p-[8px] pt-[5rem]">
+    <p class="m-[24px] ml-0 mr-0">
+      Quantum Queries (QQueries) provides non-deterministic information derived
+      using quantum mechanics to deterministic systems such as blockchain smart
+      contracts and decentralized applications (dApps). The goal of QQueries is
+      to provide a reliable source of non-deterministic information that can be
+      used to enhance the functionality and security of smart contracts and
+      dApps.
+    </p>
+    <p class="m-[24px] ml-0 mr-0">
+      QRNG will be the flagship product of Quantum Queries. It is a service that
+      provides random numbers generated from quantum phenomena. The service is
+      designed to be used by developers of smart contracts and other dApps that
+      require true randomness.
+    </p>
+    <p class="m-[24px] ml-0 mr-0">
+      QRNG will be available on the <StyledLink href="https://opengpu.network/"
+        >OpenGPU network</StyledLink
+      >, an EVM-compatible layer 1 blockchain designed to be a low-cost,
+      high-performance platform for decentralized applications with a focus on
+      AI and other GPU intensive workloads.
+    </p>
+    <p class="m-[24px] ml-0 mr-0">
+      QRNG token presale will be held on <StyledLink
+        href="https://opensale.finance/">OpenSale</StyledLink
+      >. More details coming soon!
+    </p>
+  </main>
+</RootLayout>

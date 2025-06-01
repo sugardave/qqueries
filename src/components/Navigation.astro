@@ -2,7 +2,14 @@
 import HomeButton from './HomeButton.astro';
 ---
 
-<div class="nav-links">
-  <HomeButton />
-  <a href="/about/">About</a>
+<div
+  class="nav-links hidden w-full top-[5rem] left-[48px] m-0 text-[1.2rem] font-bold md:flex md:justify-between md:items-center md:static md:w-auto md:bg-none md:[&:not(:first-child)]:ml-auto"
+>
+  <HomeButton
+    linkStyle="flex w-full justify-center p-0 pt-[10px] pb-[10px] no-underline hocus:bg-lilac-300 justify-self-center md:block md:w-auto md:p-[15px] md:pr-[20px] md:pl-[20px]"
+  />
+  <a
+    class="block text-center p-0 pt-[10px] pb-[10px] no-underline uppercase hocus:bg-lilac-300 hocus:text-lilac-600 md:p-[15px] md:pr-[20px] md:pl-[20px]"
+    href="/about/">About</a
+  >
 </div>

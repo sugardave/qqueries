@@ -1,0 +1,47 @@
+---
+import {Font} from 'astro:assets';
+import Header from '../components/Header.astro';
+
+import '../styles/global.css';
+
+const {description, title} = Astro.props;
+const defaultTitle = 'Quantum Queries';
+const defaultDescription =
+  'Quantum Queries (QQueries) provides non-deterministic information derived using quantum mechanics to deterministic systems such as blockchain smart contracts and decentralized applications (dApps).';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ?? defaultTitle}</title>
+    <meta name="description" content={description ?? defaultDescription} />
+
+    <meta property="og:url" content="https://qqueries.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={defaultTitle} />
+    <meta property="og:description" content={defaultDescription} />
+    <meta property="og:image" content="/images/qq-banner.png" />
+
+    <Font cssVariable="--font-poppins" preload />
+  </head>
+  <body class="font-sans min-h-screen bg-zinc-900 text-lilac-300 text-[1.5rem]">
+    <Header />
+    <slot />
+    <script>
+      import '../scripts/menu.js';
+    </script>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
